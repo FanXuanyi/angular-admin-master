@@ -1,0 +1,9 @@
+.sidebar ul li {
+  list-style: none;
+}
+
+.sidebar ul li a {
+  font-size: 18px;
+  border: 0;
+  border-radius: 0;
+}
