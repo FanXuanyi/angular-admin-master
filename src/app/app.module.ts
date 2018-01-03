@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 
 export const ROUTES: Routes = [
-  { path: '', component: MainComponent }
+  { path: '', loadChildren: './main/main.module#MainModule' }
 ];
 
 @NgModule({
