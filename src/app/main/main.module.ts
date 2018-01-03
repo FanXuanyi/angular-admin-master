@@ -9,13 +9,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './main.component';
 import { HomeComponent } from './home/home.component';
+import { MessageComponent } from './message/message.component';
 
 export const ROUTES: Routes = [
   {
     path: '',
     component: MainComponent,
     children: [
-      { path: 'home', component: HomeComponent }
+      { path: 'home', component: HomeComponent },
+      { path: 'message', component: MessageComponent }
     ]
   }
 ];
@@ -25,7 +27,8 @@ export const ROUTES: Routes = [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    MessageComponent
   ],
   imports: [
     RouterModule.forChild(ROUTES)
