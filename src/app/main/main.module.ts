@@ -10,6 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './main.component';
 import { HomeComponent } from './home/home.component';
 import { MessageComponent } from './message/message.component';
+import { TableComponent } from './table/table.component';
 
 export const ROUTES: Routes = [
   {
@@ -17,7 +18,8 @@ export const ROUTES: Routes = [
     component: MainComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'message', component: MessageComponent }
+      { path: 'message', component: MessageComponent },
+      { path: 'table', component: TableComponent }
     ]
   }
 ];
@@ -28,7 +30,8 @@ export const ROUTES: Routes = [
     FooterComponent,
     SidebarComponent,
     HomeComponent,
-    MessageComponent
+    MessageComponent,
+    TableComponent
   ],
   imports: [
     RouterModule.forChild(ROUTES)
