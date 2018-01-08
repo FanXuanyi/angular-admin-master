@@ -11,6 +11,7 @@ import { MainComponent } from './main.component';
 import { HomeComponent } from './home/home.component';
 import { MessageComponent } from './message/message.component';
 import { TableComponent } from './table/table.component';
+import { SiteFormComponent } from './site-form/site-form.component';
 
 export const ROUTES: Routes = [
   {
@@ -19,7 +20,8 @@ export const ROUTES: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'message', component: MessageComponent },
-      { path: 'table', component: TableComponent }
+      { path: 'table', component: TableComponent },
+      { path: 'site-form', component: SiteFormComponent }
     ]
   }
 ];
@@ -31,7 +33,8 @@ export const ROUTES: Routes = [
     SidebarComponent,
     HomeComponent,
     MessageComponent,
-    TableComponent
+    TableComponent,
+    SiteFormComponent
   ],
   imports: [
     RouterModule.forChild(ROUTES)
