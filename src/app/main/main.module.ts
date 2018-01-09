@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { MessageComponent } from './message/message.component';
 import { TableComponent } from './table/table.component';
 import { SiteFormComponent } from './site-form/site-form.component';
+import { ChartComponent } from './chart/chart.component';
 
 export const ROUTES: Routes = [
   {
@@ -21,7 +22,8 @@ export const ROUTES: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'message', component: MessageComponent },
       { path: 'table', component: TableComponent },
-      { path: 'site-form', component: SiteFormComponent }
+      { path: 'site-form', component: SiteFormComponent },
+      { path: 'chart', component: ChartComponent }
     ]
   }
 ];
@@ -34,7 +36,8 @@ export const ROUTES: Routes = [
     HomeComponent,
     MessageComponent,
     TableComponent,
-    SiteFormComponent
+    SiteFormComponent,
+    ChartComponent
   ],
   imports: [
     RouterModule.forChild(ROUTES)
