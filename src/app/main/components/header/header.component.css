@@ -1,0 +1,24 @@
+.navbar-brand {
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.main-menu {
+  letter-spacing: 1px;
+}
+
+.main-menu i {
+  margin-right: 5px;
+}
+
+.caret {
+  margin-left: 3px;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  font-size: 16px;
+}

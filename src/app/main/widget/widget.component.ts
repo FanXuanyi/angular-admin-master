@@ -79,13 +79,13 @@ export class WidgetComponent implements OnInit {
     this.date = new Date;
     for (let i = 0; i < 42; i++) {
       if (this.day[i]) {
-        this.today[i] = 'b'; // b表示鼠标移动到某一天的状态（去掉空白格的悬浮状态）
+        this.today[i] = 'slip'; // slip表示鼠标移动到某一天的动画效果
       }
     }
     if (this.chooseYear === parseInt(this.date.getFullYear()) && this.chooseMonth === parseInt(this.date.getMonth() + 1)) {
       const a = Math.floor((this.date.getDate() / 7));
       const b = this.date.getDate() % 7;
-      this.today[a * 7 + b] = 'a'; // a表示当天的状态
+      this.today[a * 7 + b] = 'hightlight'; // hightlight表示高亮显示当天
     }
 
   }
