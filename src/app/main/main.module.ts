@@ -10,6 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './main.component';
 import { HomeComponent } from './home/home.component';
 import { MessageComponent } from './message/message.component';
+import { WidgetComponent } from './widget/widget.component';
 import { TableComponent } from './table/table.component';
 import { SiteFormComponent } from './site-form/site-form.component';
 import { ChartComponent } from './chart/chart.component';
@@ -21,6 +22,7 @@ export const ROUTES: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'message', component: MessageComponent },
+      { path: 'widget', component: WidgetComponent },
       { path: 'table', component: TableComponent },
       { path: 'site-form', component: SiteFormComponent },
       { path: 'chart', component: ChartComponent }
@@ -37,7 +39,8 @@ export const ROUTES: Routes = [
     MessageComponent,
     TableComponent,
     SiteFormComponent,
-    ChartComponent
+    ChartComponent,
+    WidgetComponent
   ],
   imports: [
     RouterModule.forChild(ROUTES)
@@ -48,4 +51,6 @@ export const ROUTES: Routes = [
     SidebarComponent
   ]
 })
-export class MainModule { }
+export class MainModule {
+  value: Date;
+}

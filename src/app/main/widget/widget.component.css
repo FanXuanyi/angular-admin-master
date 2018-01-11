@@ -1,0 +1,35 @@
+.calendar {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.calendarHeader {
+  margin-bottom: 10px;
+}
+
+.yearMonth {
+  font-size: 24px;
+}
+
+.table thead th {
+  text-align: center;
+}
+
+.week {
+  font-size: 18px;
+}
+
+.day {
+  font-size: 16px;
+}
+
+.b:hover {
+  background-color: rgba(180,238,180, .5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.a{
+  background-color: rgb(180,238,180);
+  border-radius: 50%;
+  cursor: pointer;
+}
