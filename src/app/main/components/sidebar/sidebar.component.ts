@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  showMenu= false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isShowMenu() {
+    this.showMenu = !this.showMenu;
   }
 
 }

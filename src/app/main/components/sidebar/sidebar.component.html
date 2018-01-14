@@ -1,27 +1,43 @@
 <div class="sidebar">
   <ul class="list-group">
     <li>
-      <a routerLink="/home" routerLinkActive="active" class="list-group-item">Home</a>
+      <a routerLink="/home" class="list-group-item">
+        <i class="fa fa-fw fa-home"></i>Home
+      </a>
     </li>
     <li>
-      <a routerLink="/message" routerLinkActive="active" class="list-group-item">Message</a>
+      <a routerLink="/message" class="list-group-item">
+        <i class="fa fa-fw fa-envelope"></i>Message
+      </a>
     </li>
     <li>
-      <a routerLink="/widget" routerLinkActive="active" class="list-group-item">Widgets</a>
+      <a routerLink="/widget" class="list-group-item">
+        <i class="fa fa-fw fa-location-arrow"></i>Widgets
+      </a>
     </li>
     <li>
-      <a href="javascript:void(0);" class="list-group-item">Dropdown</a>
-      <ul>
-        <li>
-          <a routerLink="/table" routerLinkActive="active" class="list-group-item">Tables</a>
-        </li>
-        <li>
-          <a routerLink="/site-form" routerLinkActive="active" class="list-group-item">Forms</a>
-        </li>
-        <li>
-          <a routerLink="/chart" routerLinkActive="active" class="list-group-item">Charts</a>
-        </li>
-      </ul>
+      <a href="javascript:void(0);" class="list-group-item" (click)="isShowMenu()">
+        <i class="fa fa-fw fa-plane"></i>Dropdown
+      </a>
+      <div [class.expand]="showMenu">
+        <ul class="submenu">
+          <li>
+            <a routerLink="/table" class="list-group-item">
+              <i class="fa fa-fw fa-table"></i>Tables
+            </a>
+          </li>
+          <li>
+            <a routerLink="/site-form" class="list-group-item">
+              <i class="fa fa-fw fa-edit"></i>Forms
+            </a>
+          </li>
+          <li>
+            <a routerLink="/chart" class="list-group-item">
+              <i class="fa fa-fw fa-wrench"></i>Charts
+            </a>
+          </li>
+        </ul>
+      </div>
     </li>
   </ul>
 </div>
