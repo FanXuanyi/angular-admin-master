@@ -2,6 +2,7 @@
  * Created by FXY on 2018/1/2.
  */
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './components/header/header.component';
@@ -9,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './main.component';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageComponent } from './message/message.component';
 import { WidgetComponent } from './widget/widget.component';
 import { TableComponent } from './table/table.component';
@@ -21,6 +23,7 @@ export const ROUTES: Routes = [
     component: MainComponent,
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'dashboard', component: DashboardComponent},
       { path: 'message', component: MessageComponent },
       { path: 'widget', component: WidgetComponent },
       { path: 'table', component: TableComponent },
@@ -36,6 +39,7 @@ export const ROUTES: Routes = [
     FooterComponent,
     SidebarComponent,
     HomeComponent,
+    DashboardComponent,
     MessageComponent,
     TableComponent,
     SiteFormComponent,
@@ -43,6 +47,7 @@ export const ROUTES: Routes = [
     WidgetComponent
   ],
   imports: [
+    CommonModule,
     RouterModule.forChild(ROUTES)
   ],
   exports: [
@@ -51,6 +56,4 @@ export const ROUTES: Routes = [
     SidebarComponent
   ]
 })
-export class MainModule {
-  value: Date;
-}
+export class MainModule { }

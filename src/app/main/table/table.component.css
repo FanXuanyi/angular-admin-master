@@ -1,0 +1,10 @@
+.tables {
+  margin-top: 30px;
+}
+.breadcrumb a {
+  text-decoration: none;
+}
+
+.breadcrumb i.fa {
+  margin-right: 5px;
+}
