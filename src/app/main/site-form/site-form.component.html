@@ -63,7 +63,7 @@
               </div>
             </div>
             <div>
-              <input type="submit" value="提交">
+              <input class="btn btn-primary" type="submit" value="提交">
             </div>
           </form>
         </div>
@@ -78,12 +78,20 @@
             <div class="form-group">
               <label for="personName">用户名:</label>
               <input type="text" placeholder="请输入用户名" class="form-control" id="personName" formControlName="personName" />
+              <div class="text-danger" *ngIf="anotherForm.get('personName').invalid && (anotherForm.get('personName').touched || anotherForm.get('personName').dirty)">
+                <p *ngIf="anotherForm.hasError('required','personName')">用户名必填</p>
+                <p *ngIf="anotherForm.hasError('minlength','personName')">用户名长度过短</p>
+                <p *ngIf="anotherForm.hasError('maxlength','personName')">用户名长度太长</p>
+              </div>
             </div>
             <div class="form-group">
               <label for="phone">手机号码:</label>
-              <input type="text" placeholder="请输入手机号码" class="form-control" id="phone" formControlName="phone"/>
+              <input type="tel" placeholder="请输入手机号码" class="form-control" id="phone" formControlName="phone"/>
+              <div class="text-danger" *ngIf="anotherForm.get('phone').invalid && (anotherForm.get('phone').touched || anotherForm.get('phone').dirty)">
+                <p *ngIf="anotherForm.hasError('phone', 'phone')">{{anotherForm.getError('phone', 'phone')?.info}}</p>
+              </div>
             </div>
-            <div formGroupName="pass" style="border:none;">
+            <div formGroupName="pass">
               <div class="form-group">
                 <label>密码:</label>
                 <input type="password" class="form-control" placeholder="请输入密码" formControlName="pass1" />
@@ -93,8 +101,13 @@
                 <input type="password" class="form-control" placeholder="请再次输入密码" formControlName="pass2" />
               </div>
             </div>
+            <div class="text-danger" *ngIf="anotherForm.get('pass').invalid && (anotherForm.get('pass').touched || anotherForm.get('pass').dirty)">
+              <p *ngIf="anotherForm.hasError('passValidator','pass')">
+                {{anotherForm.getError('passValidator','pass')?.info}}
+              </p>
+            </div >
             <div class="form-group">
-              <input type="submit" value="提交" class="btn btn-warning" [disabled]="!myForm.valid" />
+              <input type="submit" value="提交" class="btn btn-primary">
             </div>
           </form>
         </div>
