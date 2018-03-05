@@ -7,8 +7,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SiteFormComponent implements OnInit {
 
-  @Input()
-  username = 'lollipop';
+  public myForm: any = {
+    username: '',
+    password: '',
+    confirmPass: ''
+  };
 
   onSubmit(value) {
     console.log(value);

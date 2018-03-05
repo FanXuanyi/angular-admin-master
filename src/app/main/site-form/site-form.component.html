@@ -14,6 +14,67 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="panel panel-default">
+        <div class="panel-heading">模板式表单</div>
+        <div class="panel-body">
+          <form role="form" #firstForm="ngForm" (ngSubmit)="onSubmit(firstForm.value)">
+            <div class="form-group">
+              <label for="username">用户名：</label>
+              <input type="text" name="username" id="username" placeholder="请输入用户名" class="form-control" required [(ngModel)]="myForm.username" #username="ngModel">
+              <!--<span [hidden]="uname.valid || uname.pristine">-->
+              <!--请输入用户名！-->
+              <!--</span>-->
+              <span *ngIf="username.invalid && (username.touched || username.dirty)">
+                <span class="text-danger" *ngIf="username.errors?.required">
+                  请输入用户名！
+                </span>
+              </span>
+            </div>
+            <!--<div class="form-control">-->
+            <!--<label for="username">用户名:</label>-->
+            <!--<input ngModel type="text" name="username" id="username" required/>-->
+            <!--<span [hidden]="!myForm.form.hasError('required','username')">-->
+            <!--请输入用户名！-->
+            <!--</span>-->
+            <!--</div>-->
+
+            <div ngModelGroup="passwordGroup">
+              <div class="form-group">
+                <label for="password">密码：</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码" [(ngModel)]="myForm.password" required minlength="6" #password="ngModel">
+                <span *ngIf="password.invalid && (password.touched || password.dirty)">
+                  <span class="text-danger" *ngIf="password.errors?.required">
+                    请输入密码！
+                  </span>
+                  <span class="text-danger" *ngIf="password.errors.minlength">
+                    密码至少六位！
+                  </span>
+                </span>
+              </div>
+              <div class="form-group">
+                <label for="confirmPass">确认密码：</label>
+                <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="请再次输入密码" [(ngModel)]="myForm.confirmPass" required #confirmPass="ngModel">
+                <span *ngIf="password.invalid && (password.touched || password.dirty)">
+                  <span class="text-danger" *ngIf="password.errors?.required">
+                    请输入密码！
+                  </span>
+                  <span class="text-danger" *ngIf="password.value !== confirmPass.value">
+                    两次输入密码不相等，请重新输入！
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div>
+              <input type="submit" value="提交">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="panel panel-default">
         <div class="panel-heading">
           Sample Form
         </div>
@@ -84,24 +145,4 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">模板式表单</div>
-        <div class="panel-body">
-          <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
-            <div>用户名：<input type="text" name="username" ngModel></div>
-            <div ngModelGroup="passwordGroup">
-              <div>密码：<input type="password" name="password" ngModel></div>
-              <div>确认密码：<input type="password" name="confirmPass" ngModel></div>
-            </div>
-            <div>电话：<input type="text" name="phone"></div>
-            <div>
-              <input type="submit" value="提交">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
