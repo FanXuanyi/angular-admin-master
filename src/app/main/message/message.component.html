@@ -9,6 +9,19 @@
   </ul>
 
   <div class="row">
+    <div class="col-md-8">
+      <h3>{{title}}</h3>
+      <p>{{message}}</p>
+      <ul>
+        <li *ngFor="let i of info; index as k;">
+          {{k}} - {{i}}
+          <button class="btn btn-danger" (click)="deleteItem(k)">删除</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
