@@ -17,6 +17,8 @@ import { TableComponent } from './table/table.component';
 import { SiteFormComponent } from './site-form/site-form.component';
 import { ChartComponent } from './chart/chart.component';
 
+import { FormsModule } from '@angular/forms';
+
 export const ROUTES: Routes = [
   {
     path: '',
@@ -48,7 +50,8 @@ export const ROUTES: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    FormsModule
   ],
   exports: [
     HeaderComponent,

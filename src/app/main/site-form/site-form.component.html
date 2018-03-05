@@ -83,4 +83,25 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">模板式表单</div>
+        <div class="panel-body">
+          <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+            <div>用户名：<input type="text" name="username" ngModel></div>
+            <div ngModelGroup="passwordGroup">
+              <div>密码：<input type="password" name="password" ngModel></div>
+              <div>确认密码：<input type="password" name="confirmPass" ngModel></div>
+            </div>
+            <div>电话：<input type="text" name="phone"></div>
+            <div>
+              <input type="submit" value="提交">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

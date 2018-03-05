@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-site-form',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./site-form.component.css']
 })
 export class SiteFormComponent implements OnInit {
+
+  @Input()
+  username = 'lollipop';
+
+  onSubmit(value) {
+    console.log(value);
+  }
 
   constructor() { }
 
