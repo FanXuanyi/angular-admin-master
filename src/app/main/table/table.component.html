@@ -14,37 +14,39 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-default">
-        <div class="panel-heading">
-          DataTables Advanced Tables
-        </div>
+        <div class="panel-heading">DataTables Advanced Tables</div>
         <div class="panel-body">
-          <table class="table table-bordered table-striped table-hover">
+          <table class="table">
             <thead>
-            <tr>
-              <th hidden="hidden">ID</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Sex</th>
-              <th>Telphone</th>
-              <th>Grade</th>
-              <th>Operation</th>
-            </tr>
+              <tr>
+                <th hidden="hidden">ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Telphone</th>
+                <th>Grade</th>
+                <th>Operation</th>
+              </tr>
             </thead>
-            <tbody>
-              <tr *ngFor="let p of person">
-                <th hidden="hidden">{{p.id}}</th>
-                <th>{{p.name}}</th>
-                <th>{{p.age}}</th>
-                <th>{{p.sex}}</th>
-                <th>{{p.telphone}}</th>
-                <th>{{p.grade}}</th>
-                <th>
+            <tbody *ngFor="let p of person; let i = index;">
+              <tr *ngIf=" (i >= pageSize-pageData) && (i < pageSize)">
+                <td class="td" hidden="hidden">{{p.id}}</td>
+                <td class="td">{{p.name}}</td>
+                <td class="td">{{p.age}}</td>
+                <td class="td">{{p.sex}}</td>
+                <td class="td">{{p.telphone}}</td>
+                <td class="td">{{p.grade}}</td>
+                <td class="td">
                   <button class="btn btn-primary" (click)="onModify(p.id)">修改</button>
                   <button class="btn btn-danger" (click)="onDelete(p.id)">删除</button>
-                </th>
+                </td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="panel-footer">
+          <app-page [pageParams]="{pageSize: pageSize, totalNum: totalNum, curPage: pageSize/pageData, totalPage: totalPage, pageData: pageData}"
+                    (changeCurPage)="getPageData($event)"></app-page>
         </div>
       </div>
     </div>

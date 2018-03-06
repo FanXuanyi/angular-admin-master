@@ -17,7 +17,8 @@ import { TableComponent } from './table/table.component';
 import { SiteFormComponent } from './site-form/site-form.component';
 import { ChartComponent } from './chart/chart.component';
 
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageComponent } from './table/page/page.component';
 
 export const ROUTES: Routes = [
   {
@@ -46,7 +47,8 @@ export const ROUTES: Routes = [
     TableComponent,
     SiteFormComponent,
     ChartComponent,
-    WidgetComponent
+    WidgetComponent,
+    PageComponent
   ],
   imports: [
     CommonModule,

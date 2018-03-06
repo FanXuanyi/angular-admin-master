@@ -1,0 +1,14 @@
+<div class="text-right" *ngIf="(pageParams.totalPage > 1) && (pageParams.totalNum > 0)">
+  <span class="text-muted">总计{{pageParams.totalNum}}条，第{{pageParams.curPage}} / {{pageParams.totalPage}}页</span>
+  <button class="btn btn-default prev" routerLink="['./']"
+          (click)="changePage(pageParams.curPage-1)"
+          [queryParams]="{pageNo: pageParams.curPage-1}"
+          [disabled]="pageParams.curPage==1">上一页</button>
+  <button class="btn btn-default" routerLink="['./']" [disabled]="pageParams.curPage==page.pageNo"
+          (click)="changePage(page.pageNo)" [queryParams]="page"
+          *ngFor="let page of getPageList(pageParams)">{{page.pageNo}}</button>
+  <button class="btn  btn-default next" routerLink="['./']"
+          (click)="changePage(pageParams.curPage-(-1))"
+          [queryParams]="{pageNo: pageParams.curPage-(-1)}"
+          [disabled]="pageParams.curPage==pageParams.totalPage">下一页</button>
+</div>
