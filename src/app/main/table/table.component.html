@@ -18,94 +18,31 @@
           DataTables Advanced Tables
         </div>
         <div class="panel-body">
-          <table class="table table-bordered">
+          <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
+              <th hidden="hidden">ID</th>
               <th>Name</th>
               <th>Age</th>
               <th>Sex</th>
               <th>Telphone</th>
               <th>Grade</th>
+              <th>Operation</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th>John</th>
-              <th>20</th>
-              <th>male</th>
-              <th>12345678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>Jack</th>
-              <th>17</th>
-              <th>male</th>
-              <th>12345678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>John</th>
-              <th>20</th>
-              <th>male</th>
-              <th>12345678</th>
-              <th>B</th>
-            </tr>
-            <tr>
-              <th>John</th>
-              <th>20</th>
-              <th>male</th>
-              <th>12345678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>Lucy</th>
-              <th>20</th>
-              <th>female</th>
-              <th>32145678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>John</th>
-              <th>20</th>
-              <th>male</th>
-              <th>12345678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>Lucy</th>
-              <th>20</th>
-              <th>female</th>
-              <th>32145678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>Lily</th>
-              <th>19</th>
-              <th>female</th>
-              <th>12345678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>Lucy</th>
-              <th>20</th>
-              <th>female</th>
-              <th>32145678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>John</th>
-              <th>20</th>
-              <th>male</th>
-              <th>12345678</th>
-              <th>A</th>
-            </tr>
-            <tr>
-              <th>Lucy</th>
-              <th>20</th>
-              <th>female</th>
-              <th>32145678</th>
-              <th>A</th>
-            </tr>
+              <tr *ngFor="let p of person">
+                <th hidden="hidden">{{p.id}}</th>
+                <th>{{p.name}}</th>
+                <th>{{p.age}}</th>
+                <th>{{p.sex}}</th>
+                <th>{{p.telphone}}</th>
+                <th>{{p.grade}}</th>
+                <th>
+                  <button class="btn btn-primary" (click)="onModify(p.id)">修改</button>
+                  <button class="btn btn-danger" (click)="onDelete(p.id)">删除</button>
+                </th>
+              </tr>
             </tbody>
           </table>
         </div>
