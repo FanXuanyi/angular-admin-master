@@ -1,39 +1,39 @@
 <div class="sidebar">
   <ul class="list-group">
     <li>
-      <a routerLink="/dashboard" class="list-group-item">
+      <a routerLink="/dashboard" routerLinkActive="active" class="list-group-item">
         <i class="fa fa-fw fa-dashboard"></i>Dashboard
       </a>
     </li>
     <li>
-      <a routerLink="/message" class="list-group-item">
+      <a routerLink="/message" routerLinkActive="active" class="list-group-item">
         <i class="fa fa-fw fa-envelope"></i>Message
       </a>
     </li>
     <li>
-      <a routerLink="/widget" class="list-group-item">
+      <a routerLink="/widget" routerLinkActive="active" class="list-group-item">
         <i class="fa fa-fw fa-location-arrow"></i>Widgets
       </a>
     </li>
     <li>
       <a href="javascript:void(0);" class="list-group-item" (click)="isShowMenu()">
         <i class="fa fa-fw fa-plane"></i>Dropdown
-        <i class="fa fa-fw" [ngClass]="{'fa-chevron-right': !showMenu,'fa-chevron-down': showMenu}"></i>
+        <i class="fa fa-fw sign" [ngClass]="{'fa-chevron-right': !showMenu,'fa-chevron-down': showMenu}"></i>
       </a>
       <div [class.expand]="showMenu">
         <ul class="submenu">
           <li>
-            <a routerLink="/table" class="list-group-item">
+            <a routerLink="/table" routerLinkActive="active" class="list-group-item">
               <i class="fa fa-fw fa-table"></i>Tables
             </a>
           </li>
           <li>
-            <a routerLink="/site-form" class="list-group-item">
+            <a routerLink="/site-form" routerLinkActive="active" class="list-group-item">
               <i class="fa fa-fw fa-edit"></i>Forms
             </a>
           </li>
           <li>
-            <a routerLink="/chart" class="list-group-item">
+            <a routerLink="/chart" routerLinkActive="active" class="list-group-item">
               <i class="fa fa-fw fa-wrench"></i>Charts
             </a>
           </li>

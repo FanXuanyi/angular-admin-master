@@ -1,6 +1,6 @@
 .sidebar {
   position: fixed;
-  background-color: #222;
+  background-color: #1C2B36;
   color: #fff;
   overflow-y: auto;
   width: 275px;
@@ -14,21 +14,31 @@
 
 .sidebar ul li {
   list-style: none;
-  padding-left: 15px;
 }
 
 .sidebar ul li a {
   color: #fff;
-  background-color: #222;
+  background-color: #1C2B36;
   font-size: 18px;
   border: 0;
   border-radius: 0;
   letter-spacing: 1px;
   outline: 0;/*解决鼠标点击移开之后显示白色虚线方框的bug*/
+  padding-left: 30px;
 }
 
 .sidebar ul li a .fa {
-  margin-right: 10px;
+  margin-right: 25px;
+}
+
+.sidebar ul li a .sign {
+  float: right;
+  margin-right: 0;
+  line-height: 27px;
+}
+
+.sidebar ul li a.active {
+  background-color: #131E26;
 }
 
 ul.submenu {
@@ -37,5 +47,10 @@ ul.submenu {
 
 .expand ul.submenu {
   display: block;
+  padding-left: 0;
+}
+
+.expand ul.submenu li a {
+  padding-left: 75px;
 }
 

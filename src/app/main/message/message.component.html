@@ -9,15 +9,18 @@
   </ul>
 
   <div class="row">
-    <div class="col-md-8">
-      <h3>{{title}}</h3>
+    <div class="col-md-8 ">
+      <h2>{{title}}</h2>
       <p>{{message}}</p>
-      <ul>
-        <li *ngFor="let i of info; index as k;">
-          {{k}} - {{i}}
-          <button class="btn btn-danger" (click)="deleteItem(k)">删除</button>
-        </li>
-      </ul>
+      <div class="msg-list">
+        <h4>消息列表</h4>
+        <ul>
+          <li class="list-group-item" *ngFor="let i of info; index as k;">
+            {{k+1}}. {{i}}
+            <button class="btn btn-danger delete" (click)="deleteItem(k)">删除</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
