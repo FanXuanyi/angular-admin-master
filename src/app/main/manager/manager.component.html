@@ -1,0 +1,38 @@
+<div class="container-fluid manager">
+  <ul class="breadcrumb">
+    <li>
+      <a routerLink="/home">
+        <i class="fa fa-fw fa-home"></i>Home
+      </a>
+    </li>
+    <li>Manager Information</li>
+  </ul>
+
+  <div class="admin_set">
+    <ul>
+      <li>
+        <span>姓名：</span>
+        <span>{{admin_name}}</span>
+      </li>
+      <li>
+        <span>注册时间：</span>
+        <span>{{create_time}}</span>
+      </li>
+      <li>
+        <span>管理元权限：</span>
+        <span>{{admin_power}}</span>
+      </li>
+      <li>
+        <span>管理员ID：</span>
+        <span>{{admin_id}}</span>
+      </li>
+      <li>
+        <span>更换头像：</span>
+        <div class="avatar-upload">
+          <img class="avatar" src="../../../assets/image/default.jpg" alt="">
+          <input type="file" name="file">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
