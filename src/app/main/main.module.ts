@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageComponent } from './table/page/page.component';
 import { ManagerComponent } from './manager/manager.component';
 import { EditComponent } from './edit/edit.component';
+import { SettingComponent } from './setting/setting.component';
 
 export const ROUTES: Routes = [
   {
@@ -35,7 +36,8 @@ export const ROUTES: Routes = [
       { path: 'site-form', component: SiteFormComponent },
       { path: 'chart', component: ChartComponent },
       { path: 'manager', component: ManagerComponent },
-      { path: 'edit', component: EditComponent }
+      { path: 'edit', component: EditComponent },
+      { path: 'setting', component: SettingComponent }
     ]
   }
 ];
@@ -54,7 +56,8 @@ export const ROUTES: Routes = [
     WidgetComponent,
     PageComponent,
     ManagerComponent,
-    EditComponent
+    EditComponent,
+    SettingComponent
   ],
   imports: [
     CommonModule,

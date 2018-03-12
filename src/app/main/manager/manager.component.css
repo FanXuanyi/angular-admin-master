@@ -11,7 +11,7 @@
 }
 
 .admin_set {
-  width: 60%;
+  width: 80%;
   background-color: #F9FAFC;
   min-height: 400px;
   margin: 20px auto 0;
@@ -25,23 +25,4 @@
 
 .admin_set ul > li span {
   color: #666;
-}
-
-.avatar-uploader {
-  border: 1px dashed #d9d9d9;
-  margin-top: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.avatar-uploader {
-  border-color: #20a0ff;
-}
-
-.avatar {
-  width: 120px;
-  height: 120px;
-  display: block;
 }

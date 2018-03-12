@@ -1,0 +1,55 @@
+<div class="container-fluid setting">
+  <ul class="breadcrumb">
+    <li>
+      <a routerLink="/home">
+        <i class="fa fa-fw fa-home"></i>Home
+      </a>
+    </li>
+    <li>Setting</li>
+  </ul>
+
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="admin_set">
+        <form role="form" #setForm="ngForm" (ngSubmit)="onSubmit(setForm.value)">
+          <div ngModelGroup="passwordGroup">
+            <div class="form-group">
+              <label for="password">修改密码：</label>
+              <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码" [(ngModel)]="myForm.password" required minlength="6" #password="ngModel">
+              <span *ngIf="password.invalid && (password.touched || password.dirty)">
+              <span class="text-danger" *ngIf="password.errors?.required">
+                请输入密码！
+              </span>
+              <span class="text-danger" *ngIf="password.errors.minlength">
+                密码至少六位！
+              </span>
+            </span>
+            </div>
+            <div class="form-group">
+              <label for="confirmPass">确认密码：</label>
+              <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="请再次输入密码" [(ngModel)]="myForm.confirmPass" required #confirmPass="ngModel">
+              <span *ngIf="password.invalid && (password.touched || password.dirty)">
+          <span class="text-danger" *ngIf="password.errors?.required">
+            请输入密码！
+          </span>
+          <span class="text-danger" *ngIf="password.value !== confirmPass.value">
+            两次输入密码不相等，请重新输入！
+          </span>
+        </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>更换头像：</label>
+            <div class="avatar-upload">
+              <img class="avatar" src="../../../assets/image/default.jpg" alt="">
+              <input type="file" name="file">
+            </div>
+          </div>
+          <div>
+            <input class="btn btn-primary" type="submit" value="提交">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
