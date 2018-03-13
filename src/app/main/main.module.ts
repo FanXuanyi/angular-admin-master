@@ -67,6 +67,7 @@ export const ROUTES: Routes = [
     ReactiveFormsModule
   ],
   exports: [
+    // MainComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent

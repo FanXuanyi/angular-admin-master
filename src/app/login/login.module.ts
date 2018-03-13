@@ -5,9 +5,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
 
 import { Routes, RouterModule } from '@angular/router';
+import { LoginInComponent } from './login-in/login-in.component';
 
 export const ROUTES: Routes = [
-  { path: '', component: LoginComponent}
+  {
+    path: '',
+    component: LoginComponent,
+    children: [
+      { path: '', component: LoginInComponent }
+    ]
+  }
 ];
 
 @NgModule({
@@ -18,10 +25,12 @@ export const ROUTES: Routes = [
     RouterModule.forChild(ROUTES),
   ],
   declarations: [
-    LoginComponent
+    LoginComponent,
+    LoginInComponent
   ],
   exports: [
-    LoginComponent
+    // LoginComponent,
+    LoginInComponent
   ]
 })
 export class LoginModule { }
