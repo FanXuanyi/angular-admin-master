@@ -1,0 +1,37 @@
+<div class="reg-wrapper">
+  <div class="reg-container">
+    <div class="reg-box">
+      <div class="text-center reg-header">
+        <h3 class="card-title" style="display:inline">后台管理系统注册</h3>
+      </div>
+      <hr/>
+      <form [formGroup]="regForm">
+        <div class="form-group">
+          <label for="userName">用户名:</label>
+          <input type="text" placeholder="请输入用户名" class="form-control" id="userName" formControlName="userName" />
+          <div class="text-danger" *ngIf="regForm.get('userName').invalid && (regForm.get('userName').touched || regForm.get('userName').dirty)">
+            <p *ngIf="regForm.hasError('required','userName')">用户名必填</p>
+          </div>
+        </div>
+        <div formGroupName="pass">
+          <div class="form-group">
+            <label>密码:</label>
+            <input type="password" class="form-control" placeholder="请输入密码" formControlName="pass1" />
+          </div>
+          <div class="form-group">
+            <label>确认密码:</label>
+            <input type="password" class="form-control" placeholder="请再次输入密码" formControlName="pass2" />
+          </div>
+        </div>
+        <div class="text-danger" *ngIf="regForm.get('pass').invalid && (regForm.get('pass').touched || regForm.get('pass').dirty)">
+          <p *ngIf="regForm.hasError('passValidator','pass')">
+            {{regForm.getError('passValidator','pass')?.info}}
+          </p>
+        </div>
+        <div class="form-group text-center">
+          <input type="submit" value="注册" class="btn btn-primary">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -6,13 +6,15 @@ import { LoginComponent } from './login.component';
 
 import { Routes, RouterModule } from '@angular/router';
 import { LoginInComponent } from './login-in/login-in.component';
+import { RegistryComponent } from './registry/registry.component';
 
 export const ROUTES: Routes = [
   {
     path: '',
     component: LoginComponent,
     children: [
-      { path: '', component: LoginInComponent }
+      { path: '', component: LoginInComponent },
+      { path: 'registry', component: RegistryComponent }
     ]
   }
 ];
@@ -26,11 +28,13 @@ export const ROUTES: Routes = [
   ],
   declarations: [
     LoginComponent,
-    LoginInComponent
+    LoginInComponent,
+    RegistryComponent
   ],
   exports: [
     // LoginComponent,
-    LoginInComponent
+    LoginInComponent,
+    RegistryComponent
   ]
 })
 export class LoginModule { }
