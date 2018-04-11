@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 @Component({
   selector: 'app-site-form',
   templateUrl: './site-form.component.html',
-  styleUrls: ['./site-form.component.css']
+  styleUrls: ['./site-form.component.scss']
 })
 export class SiteFormComponent implements OnInit {
 

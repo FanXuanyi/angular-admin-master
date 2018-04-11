@@ -4,7 +4,7 @@ import { TableService } from '../../services/table.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css'],
+  styleUrls: ['./table.component.scss'],
   providers: [TableService]
 })
 export class TableComponent implements OnInit {
