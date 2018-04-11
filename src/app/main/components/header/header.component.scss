@@ -1,28 +1,67 @@
 .navbar {
-  background: #1C2B36;
+  background: #4594ec;
+  border-bottom: 1px solid #55aae9;
+
+  .navbar-header {
+    .navbar-brand {
+      letter-spacing: 1px;
+      color: #fff;
+      font-size: 24px;
+    }
+  }
+
+  .main-menu {
+    letter-spacing: 1px;
+
+    ul {
+      li {
+        a {
+          color: #fff;
+          font-size: 16px;
+          &:hover {
+            background: #55aae9;
+          }
+          &.active {
+            background: #66afe9;
+          }
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+      li.dropdown {
+        a {
+          .caret {
+            margin-left: 3px;
+          }
+        }
+
+        ul {
+          .dropdown-item {
+            display: block;
+            padding: 5px 10px;
+            margin-bottom: -1px;
+            background-color: #fff;
+            font-size: 16px;
+
+            a {
+              color: #000;
+
+              &:hover {
+                background: #ccc;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-.navbar-brand {
-  letter-spacing: 1px;
+//修改Bootstrap下拉菜单点击后的默认样式
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background: #66afe9;
   color: #fff;
-}
-
-.main-menu {
-  letter-spacing: 1px;
-}
-
-.main-menu i {
-  margin-right: 5px;
-}
-
-.caret {
-  margin-left: 3px;
-}
-
-.dropdown-item {
-  display: block;
-  padding: 5px 10px;
-  margin-bottom: -1px;
-  background-color: #fff;
-  font-size: 16px;
 }

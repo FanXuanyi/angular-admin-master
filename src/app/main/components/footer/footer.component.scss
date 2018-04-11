@@ -1,12 +1,15 @@
 .navbar {
-  background: #1C2B36;
-}
+  background: #4594ec;
+  border-top: 1px solid #55aae9;
 
-div.row {
-  line-height: 50px;
-}
+  .container {
+    div.row {
+      line-height: 50px;
 
-span.copyright {
-  font-size: 16px;
-  color: #fff;
+      span.copyright {
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+  }
 }
