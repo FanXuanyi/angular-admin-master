@@ -15,7 +15,8 @@ export class MessageComponent implements OnInit {
   info: string[];
 
   deleteItem(index) {
-    console.log(index);
+    // console.log(index);
+    this.info.splice(index, 1);
   }
 
   constructor(private messageService: MessageService) {

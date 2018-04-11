@@ -1,27 +1,48 @@
 .message {
   margin-top: 30px;
-}
 
-.breadcrumb a {
-  text-decoration: none;
-}
+  .breadcrumb {
+    a {
+      text-decoration: none;
+    }
 
-.breadcrumb i.fa {
-  margin-right: 5px;
-}
+    i.fa {
+      margin-right: 5px;
+    }
+  }
 
-.msg-list {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
+  .row {
+    .panel {
+      margin-top: 30px;
+      .panel-heading {
+        .panel-title {
+          a {
+            font-size: 12px;
+            cursor: pointer;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .panel-body {
+        ul.msg-list {
+          padding-left: 0;
+          li {
+            list-style: none;
+            padding: 10px;
+            font-size: 16px;
+            display: block;
 
-.msg-list ul {
-  padding-left: 0;
-}
-
-.msg-list ul li button.delete {
-  float: right;
-  width: 50px;
-  height: 25px;
-  line-height: 12px;
+            button.delete {
+              float: right;
+              width: 50px;
+              height: 25px;
+              line-height: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

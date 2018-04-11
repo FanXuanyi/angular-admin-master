@@ -12,80 +12,25 @@
     <div class="col-md-8 ">
       <h2>{{title}}</h2>
       <p>{{message}}</p>
-      <div class="msg-list">
-        <h4>消息列表</h4>
-        <ul>
-          <li class="list-group-item" *ngFor="let i of info; index as k;">
-            {{k+1}}. {{i}}
-            <button class="btn btn-danger delete" (click)="deleteItem(k)">删除</button>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Information</h3>
-        </div>
-        <div class="panel-body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem cupiditate dolor dolorum harum ipsa modi odit repellendus. Alias aliquid dolorem eaque, et excepturi fugit illo porro sequi ut vitae.
-          </p>
-        </div>
-      </div>
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title">Information</h3>
-        </div>
-        <div class="panel-body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem cupiditate dolor dolorum harum ipsa modi odit repellendus. Alias aliquid dolorem eaque, et excepturi fugit illo porro sequi ut vitae.
-          </p>
-        </div>
-      </div>
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          <h3 class="panel-title">Information</h3>
-        </div>
-        <div class="panel-body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem cupiditate dolor dolorum harum ipsa modi odit repellendus. Alias aliquid dolorem eaque, et excepturi fugit illo porro sequi ut vitae.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">Information</h3>
-        </div>
-        <div class="panel-body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem cupiditate dolor dolorum harum ipsa modi odit repellendus. Alias aliquid dolorem eaque, et excepturi fugit illo porro sequi ut vitae.
-          </p>
-        </div>
-      </div>
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h3 class="panel-title">Information</h3>
-        </div>
-        <div class="panel-body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem cupiditate dolor dolorum harum ipsa modi odit repellendus. Alias aliquid dolorem eaque, et excepturi fugit illo porro sequi ut vitae.
-          </p>
-        </div>
-      </div>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Information</h3>
+          <h3 class="panel-title">
+            消息列表
+            <a class="pull-right more">更多&nbsp;&rsaquo;&rsaquo;</a>
+          </h3>
         </div>
         <div class="panel-body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem cupiditate dolor dolorum harum ipsa modi odit repellendus. Alias aliquid dolorem eaque, et excepturi fugit illo porro sequi ut vitae.
-          </p>
+          <ul class="msg-list">
+            <li *ngFor="let i of info; index as k;">
+              {{k+1}}.&nbsp;{{i}}
+              <button class="btn btn-danger delete" (click)="deleteItem(k)">删除</button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
