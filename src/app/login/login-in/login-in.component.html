@@ -2,26 +2,45 @@
   <div class="login-container">
     <div class="login-box">
       <div class="text-center login-header">
-        <h3 class="card-title" style="display:inline">后台管理系统登录</h3>
+        <h3 class="card-title" style="display:inline">后台管理系统</h3>
       </div>
       <hr/>
-      <form [formGroup]="loginForm">
+      <form class="login-form" [formGroup]="loginForm">
         <div class="form-group">
-          <label for="userName">用户名:</label>
-          <input type="text" placeholder="请输入用户名" class="form-control" id="userName" formControlName="userName" />
+          <input type="text" placeholder="用户名" class="form-control" id="userName" formControlName="userName" />
+          <div class="username-icon"></div>
+          <!--<div class="text-danger" *ngIf="loginForm.get('userName').invalid && (loginForm.get('userName').touched || loginForm.get('userName').dirty)">-->
+            <!--<p *ngIf="loginForm.hasError('required','userName')">请输入用户名</p>-->
+          <!--</div>-->
           <div class="text-danger" *ngIf="loginForm.get('userName').invalid && (loginForm.get('userName').touched || loginForm.get('userName').dirty)">
-            <p *ngIf="loginForm.hasError('required','userName')">用户名必填</p>
+            <p *ngIf="loginForm.hasError('required','userName')">请输入用户名</p>
+            <p *ngIf="loginForm.hasError('minlength','userName')">用户名长度不少于3个字符</p>
+            <p *ngIf="loginForm.hasError('maxlength','userName')">用户名长度不超过6个字符</p>
           </div>
         </div>
         <div class="form-group">
-          <label for="password">密码:</label>
-          <input type="text" placeholder="请输入密码" class="form-control" id="password" formControlName="userName" />
+          <input type="text" placeholder="密码" class="form-control" id="password" formControlName="password" />
+          <div class="password-icon"></div>
+          <!--<div class="text-danger" *ngIf="loginForm.get('password').invalid && (loginForm.get('password').touched || loginForm.get('password').dirty)">-->
+            <!--<p *ngIf="loginForm.hasError('required','password')">请输入密码</p>-->
+          <!--</div>-->
           <div class="text-danger" *ngIf="loginForm.get('password').invalid && (loginForm.get('password').touched || loginForm.get('password').dirty)">
-            <p *ngIf="loginForm.hasError('required','password')">密码必填</p>
+            <p *ngIf="loginForm.hasError('required','password')">请输入密码</p>
+            <p *ngIf="loginForm.hasError('minlength','password')">密码长度不少于6个字符</p>
+            <p *ngIf="loginForm.hasError('maxlength','password')">用户名长度不超过16个字符</p>
           </div>
+        </div>
+        <div class="form-group" formGroupName="verification">
+          <input type="text" class="form-control inputCode" placeholder="验证码" formControlName="inputCode">
+          <input type="button" class="verificationCode btn" [(value)]="value" (click)="createCode()" formControlName="verificationCode">
+        </div>
+        <div class="text-danger" *ngIf="loginForm.get('verification').invalid && (loginForm.get('verification').touched || loginForm.get('verification').dirty)">
+          <p *ngIf="loginForm.hasError('codeValidator', 'verification')">
+            {{loginForm.getError('codeValidator', 'verification')?.info}}
+          </p>
         </div>
         <div class="form-group text-center">
-          <input type="submit" value="登录" class="btn btn-primary">
+          <input type="submit" value="登录" class="btn btn-primary submit">
         </div>
       </form>
     </div>
