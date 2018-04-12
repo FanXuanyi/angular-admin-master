@@ -5,7 +5,7 @@ import { NgbDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date';
 @Component({
   selector: 'app-widget',
   templateUrl: './widget.component.html',
-  styleUrls: ['./widget.component.css']
+  styleUrls: ['./widget.component.scss']
 })
 export class WidgetComponent implements OnInit {
 
