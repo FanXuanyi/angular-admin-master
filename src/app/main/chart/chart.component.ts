@@ -1,15 +1,64 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartService } from '../../services/chart.service';
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss']
+  styleUrls: ['./chart.component.scss'],
+  providers: [ChartService]
 })
 export class ChartComponent implements OnInit {
+  data: any[];
+  x: any[]; // X轴
+  y: any[]; // Y轴
+  xtext: any[]; // X轴TEXT
+  color: any[] = ['gray', 'pink', 'red', 'blue', 'yellow', 'green', '#fff'];
+  chart: any;
+  newData: any[] = [];
+  index = 0;
 
-  constructor() { }
+  constructor(public chartService: ChartService) {
+
+    this.data = chartService.data;
+    // console.log(this.data);
+    for (const item of this.data) {
+      // console.log(item);
+      item.name = item.name;
+      item.y = item.age; // 给Y轴赋值
+      this.xtext = item.name; // 给X轴TEXT赋值
+      item.color = this.color[this.index++];
+      // console.log(item);
+      this.newData.push(item);
+      // console.log(this.newData);
+    }
+    // this.chart.series[0].setData(this.data); // 数据填充到highcharts上面
+  }
 
   ngOnInit() {
+    this.chart = new Highcharts.Chart({
+      chart: {
+        renderTo: 'dataChart',
+        type: 'column' // 显示类型 柱形
+      },
+      title: {
+        text: '年龄分布图' // 图表的标题
+      },
+      xAxis: {
+        categories: this.xtext
+      },
+      yAxis: {
+        title: {
+          text: '年龄' // Y轴的名称
+        },
+      },
+      series: [{
+        name: '姓名'
+      }]
+    });
+
+    this.chart.series[0].setData(this.newData); // 数据填充到highcharts上面
+
+    // 数据固定
     Highcharts.chart('barChart', {
       chart: {
         type: 'bar'
@@ -135,46 +184,46 @@ export class ChartComponent implements OnInit {
         ]
       }]
     });
-    Highcharts.char('columnChart', {
-      chart: {
-        type: 'column'
-      },
-      title: {
-        text: '柱状图'
-      },
-      subtitle: {
-        text: '这是一个基础柱状图'
-      },
-      xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        crosshair: true
-      },
-      yAxis: {
-        min: 0,
-        title: {
-          text: '数量'
-        }
-      },
-      tooltip: {
-        headerFormat: '<span style="font-size:10px;">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0;">{series.name}: </td>' + '<td style="padding:0;"><b>{point.y:.1f} mm</b></td></tr>',
-        footFormat: '</table>',
-        shared: true,
-        useHTML: true
-      },
-      plotOptions: {
-        column: {
-          borderWidth: 0
-        }
-      },
-      series: [{
-        name: 'A',
-        data: [40, 70, 106, 129, 145, 176, 135, 148, 216, 196, 98, 54]
-      }, {
-        name: 'B',
-        data: [84, 78, 98, 93, 106, 85, 105, 104, 91, 54, 107, 93]
-      }]
-    });
+    // Highcharts.char('columnChart', {
+    //   chart: {
+    //     type: 'column'
+    //   },
+    //   title: {
+    //     text: '柱状图'
+    //   },
+    //   subtitle: {
+    //     text: '这是一个基础柱状图'
+    //   },
+    //   xAxis: {
+    //     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    //     crosshair: true
+    //   },
+    //   yAxis: {
+    //     min: 0,
+    //     title: {
+    //       text: '数量'
+    //     }
+    //   },
+    //   tooltip: {
+    //     headerFormat: '<span style="font-size:10px;">{point.key}</span><table>',
+    //     pointFormat: '<tr><td style="color:{series.color};padding:0;">{series.name}: </td>' + '<td style="padding:0;"><b>{point.y:.1f} mm</b></td></tr>',
+    //     footFormat: '</table>',
+    //     shared: true,
+    //     useHTML: true
+    //   },
+    //   plotOptions: {
+    //     column: {
+    //       borderWidth: 0
+    //     }
+    //   },
+    //   series: [{
+    //     name: 'A',
+    //     data: [40, 70, 106, 129, 145, 176, 135, 148, 216, 196, 98, 54]
+    //   }, {
+    //     name: 'B',
+    //     data: [84, 78, 98, 93, 106, 85, 105, 104, 91, 54, 107, 93]
+    //   }]
+    // });
   }
 
 }
